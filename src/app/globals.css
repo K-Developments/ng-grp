@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 60% 96%; /* Was: 60 56% 91% (Light Beige) */
+    --foreground: 25 20% 15%; /* Was: 25 20% 25% (Dark Brown) */
+    --card: 0 0% 100%; /* Was: 40 67% 97% (Soft Cream) -> Pure White */
+    --card-foreground: 25 20% 15%; /* Was: 25 20% 25% */
+    --popover: 0 0% 100%; /* Was: 40 67% 97% (Soft Cream) -> Pure White */
+    --popover-foreground: 25 20% 15%; /* Was: 25 20% 25% */
+    --primary: 30 30% 45%; /* Was: 30 18% 57% (Muted Brown) -> Darker, more saturated */
+    --primary-foreground: 0 0% 98%; /* Was: 40 67% 97% (Soft Cream) -> Almost white */
+    --secondary: 45 35% 80%; /* Was: 45 30% 88% (Lighter beige/off-white) -> Darker, more saturated */
+    --secondary-foreground: 30 25% 35%; /* Was: 30 18% 45% (Darker Muted Brown) -> Darker */
+    --muted: 60 55% 94%; /* Was: 60 50% 93% (Very light beige) -> Lighter */
+    --muted-foreground: 30 20% 40%; /* Was: 30 18% 45% -> Darker */
+    --accent: 30 35% 55%; /* Was: 30 25% 62% (Muted Brown) -> Darker, more saturated */
+    --accent-foreground: 0 0% 98%; /* Was: 40 67% 97% -> Almost white */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 20% 75%; /* Was: 30 20% 80% (Light border) -> Slightly darker */
+    --input: 0 0% 100%; /* Was: 40 67% 98% (Very Soft Cream) -> White */
+    --ring: 30 30% 45%; /* Was: 30 18% 57% (Muted Brown) -> Matches new primary */
+    --chart-1: 30 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 35 45% 97%; /* Was: 35 40% 94% -> Lighter */
+    --sidebar-foreground: 30 18% 30%; /* Was: 30 18% 40% -> Darker */
+    --sidebar-primary: 30 30% 45%; /* Was: 30 18% 57% -> Matches new main primary */
+    --sidebar-primary-foreground: 0 0% 98%; /* Was: 40 67% 97% -> Matches new main primary-foreground */
+    --sidebar-accent: 30 30% 88%; /* Was: 30 25% 85% -> Lighter, more distinct */
+    --sidebar-accent-foreground: 30 18% 25%; /* Was: 30 18% 35% -> Darker */
+    --sidebar-border: 30 20% 80%; /* Was: 30 20% 82% -> Slightly darker */
+    --sidebar-ring: 30 30% 45%; /* Was: 30 18% 57% -> Matches new main ring */
+  }
+
+  .dark {
+    --background: 30 10% 10%;       /* Was: 30 10% 12% -> Slightly darker */
+    --foreground: 50 50% 95%;       /* Was: 50 40% 90% -> Lighter */
+    --card: 30 10% 15%;           /* Was: 30 10% 18% -> Slightly darker */
+    --card-foreground: 50 50% 95%; /* Was: 50 40% 90% */
+    --popover: 30 10% 15%; /* Was: 30 10% 18% */
+    --popover-foreground: 50 50% 95%; /* Was: 50 40% 90% */
+    --primary: 30 25% 75%;         /* Was: 30 20% 70% -> Lighter, more saturated */
+    --primary-foreground: 30 10% 10%; /* Was: 30 10% 15% -> Darker for contrast */
+    --secondary: 30 10% 22%;       /* Was: 30 10% 25% -> Slightly darker */
+    --secondary-foreground: 50 35% 85%; /* Was: 50 30% 80% -> Lighter */
+    --muted: 30 10% 20%; /* Was: 30 10% 22% */
+    --muted-foreground: 50 30% 75%; /* Was: 50 25% 70% */
+    --accent: 30 35% 80%;          /* Was: 30 28% 75% -> Lighter, more saturated */
+    --accent-foreground: 30 10% 10%; /* Was: 30 10% 15% */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 10% 25%; /* Was: 30 10% 30% -> Slightly darker */
+    --input: 30 10% 18%; /* Was: 30 10% 20% -> Slightly darker */
+    --ring: 30 25% 75%; /* Was: 30 20% 70% -> Matches new primary */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Dark Sidebar specific colors */
+    --sidebar-background: 30 8% 8%; /* Was: 30 8% 10% -> Darker */
+    --sidebar-foreground: 50 35% 88%; /* Was: 50 30% 80% -> Lighter */
+    --sidebar-primary: 30 25% 75%; /* Was: 30 20% 70% -> Matches new main primary */
+    --sidebar-primary-foreground: 30 10% 10%; /* Was: 30 10% 15% -> Matches new main primary-foreground */
+    --sidebar-accent: 30 10% 22%; /* Was: 30 10% 25% -> Darker */
+    --sidebar-accent-foreground: 50 40% 92%; /* Was: 50 35% 88% -> Lighter */
+    --sidebar-border: 30 10% 18%; /* Was: 30 10% 20% -> Darker */
+    --sidebar-ring: 30 25% 75%; /* Was: 30 20% 70% -> Matches new main ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html{
+    font-size:90%;
+  }
+  body{
+    overflow:hidden;
+  }
+  [data-radix-scroll-area-viewport] {
+    max-height: 470px !important;
+    overflow-y: auto !important;
+  }
+
+ 
+}
+
+@media print {
+  body, html {
+    background: white !important;
+    color: black !important;
+    height: auto !important; /* Allow content to determine height */
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important; /* Ensure all content is printable */
+    font-size: 10pt; /* Adjust base font size for print */
+  }
+
+  .app-layout-sidebar,
+  .app-layout-header,
+  .app-layout-main-footer,
+  .report-action-buttons,
+  .page-header-non-printable, /* Generic class for page headers not meant for printing */
+  .print\:hidden { /* Utility class from Tailwind, explicitly reinforce */
+    display: none !important;
+  }
+  
+  /* Hide Dialog Overlay during print */
+  [data-radix-dialog-overlay] {
+    display: none !important;
+  }
+  
+  /* Ensure Radix Dialog Content expands for printing */
+  [data-radix-dialog-content] {
+    position: static !important; /* Override fixed positioning */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important; /* Content padding is on #bill-content or similar */
+    margin: 0 !important;
+    overflow: visible !important; /* Crucial for content flow */
+    transform: none !important; /* Reset any transforms */
+    display: block !important; /* Ensure it's not a flex container interfering */
+  }
+  
+  /* Ensure Radix ScrollArea Viewport also expands */
+  [data-radix-scroll-area-viewport] {
+      max-height: none !important;
+      overflow-y: visible !important;
+      height: auto !important;
+      display: block !important; /* Ensure it's not a flex container interfering */
+  }
+
+
+  /* Specific to BillDialog content for printing */
+  #bill-content {
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0.5in !important; /* Add some padding for print margins */
+    margin: 0 auto !important; /* Center the bill content on the page */
+    width: 100% !important; /* Or a fixed width like '72mm' for thermal printers */
+    max-width: 210mm; /* Approx A4 width, adjust if needed */
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  /* Ensure printable containers are visible and take up space */
+  .printable-report-container,
+  .printable-report-container *,
+  #bill-content * { /* Ensure all children of bill-content are visible */
+    visibility: visible;
+  }
+  .printable-report-container {
+    position: static !important; /* Changed from absolute for better flow */
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important; /* Allow main to expand */
+  }
+
+  /* Ensure table takes full width and looks decent */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: auto; /* Let table decide column widths */
+  }
+  th, td {
+    border: 1px solid #ccc !important; /* Basic border for table cells */
+    padding: 4px !important;
+    font-size: 9pt !important;
+    word-break: break-word; /* Break long words to prevent overflow */
+  }
+  thead {
+    background-color: #f0f0f0 !important; /* Light grey for header */
+    -webkit-print-color-adjust: exact; /* Chrome, Safari */
+    color-adjust: exact; /* Firefox, Edge */
+    display: table-header-group; /* Ensure thead repeats on each page if table breaks */
+  }
+  
+  /* Hide scrollbars in print */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Prevent page breaks inside common elements */
+  img, svg {
+    break-inside: avoid;
+  }
+  
+  /* Adjust specific elements if needed */
+  .text-xs { font-size: 8pt !important; }
+  .text-sm { font-size: 9pt !important; }
+  .text-base { font-size: 10pt !important; }
+  .font-semibold { font-weight: 600 !important; }
+  .font-bold { font-weight: 700 !important; }
+
+}
+
+
+    
